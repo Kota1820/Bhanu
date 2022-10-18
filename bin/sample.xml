@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
+            
+   <bean id="emp" class="org.jsp.app.Employee" scope="prototype">
+   <constructor-arg value="1002"></constructor-arg>
+   <constructor-arg value="RAJESH"></constructor-arg>
+   </bean>
+   
+   <bean id="emp2" class="org.jsp.app.Employee">
+   <constructor-arg value="1234" ></constructor-arg>
+   <constructor-arg value="kota"></constructor-arg>
+   <constructor-arg value="50000"></constructor-arg>
+   </bean>
+   
+   <bean id="emp3" class="org.jsp.app.Employee">
+   <constructor-arg index="1" value="Dhamu"></constructor-arg>
+   <constructor-arg index="2" value="6000"></constructor-arg>
+   <constructor-arg index="0" value="2000"></constructor-arg>
+   </bean>
+   
+   <bean id="college1" class="org.jsp.app.College">
+   <constructor-arg value="123"></constructor-arg>
+   <constructor-arg value="Chait"></constructor-arg>
+   </bean>
+   
+   <bean id="student1" class="org.jsp.app.Student">
+   <constructor-arg value="1820"></constructor-arg>
+   <constructor-arg value="Kota"></constructor-arg>
+   <constructor-arg ref="college1"></constructor-arg>
+   </bean>
+
+   <bean id="student2" class="org.jsp.app.Student">
+   <constructor-arg value="102"></constructor-arg>
+   <constructor-arg value="raj"></constructor-arg>
+   <constructor-arg ref="college1"></constructor-arg>
+   <constructor-arg>
+   <list>
+        <value>Java</value>
+         <value>WEB TECHNOLOGY</value>
+   </list>
+   </constructor-arg>
+   </bean> 
+
+</beans>
